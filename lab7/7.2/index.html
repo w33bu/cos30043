@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Vue App</title>
+  </head>
+  <body>
+	<div id="app">
+	  <table>
+		<thead>
+		  <tr>
+			<th>Code</th>
+			<th>Description</th>
+			<th>CP</th>
+			<th>Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr v-for="unit in units" :key="unit.code">
+			<td>{{ unit.code }}</td>
+			<td>{{ unit.desc }}</td>
+			<td>{{ unit.cp }}</td>
+			<td>{{ unit.type }}</td>
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+	<script src="https://unpkg.com/vue@next"></script>
+	<script src="app.js"></script>
+  </body>
+</html>
