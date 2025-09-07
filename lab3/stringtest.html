@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>String Test Web App</title>
+	<script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+	<div id="app">
+		<h2>Please enter your name:</h2>
+		<input type="text" v-model="strName" />
+
+		<p v-show="strName.toLowerCase() === 'nam'">Awesome name!</p>
+		<p v-show="strName.toLowerCase() !== 'nam'">{{ strName }} is not my name.</p>
+	</div>
+
+	<script>
+		const app = Vue.createApp({
+			data() {
+				return {
+					strName: '',
+				};
+			},
+		});
+
+		app.mount('#app');
+	</script>
+</body>
+</html>

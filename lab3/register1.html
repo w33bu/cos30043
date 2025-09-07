@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+	<h1>Registration app: Cloud service</h1>
+	<h2>Log in information</h2>
+  <div id="app">
+	<form>
+	  <p for="username">Enter Username:
+	  <input type="text" id="username" v-model="username" name="username"></p>
+
+	  <p for="password">Password:
+	  <input type="password" id="password" v-model="password" name="password"></p>
+
+	  <label for="confirmPassword">Confirm Password:
+	  <input type="password" id="confirmPassword" v-model="confirmPassword" name="confirmPassword"></label>
+	  <label v-if="password !== confirmPassword" style="color: red;">Passwords do not match</label>
+
+	  <h2>Phone information</h2>
+	  <h3>operating system</h3>
+	  <input type="radio" id="android" v-model="selectedOS" value="Android" name="os">
+	  <label for="android">Android</label>
+	  <input type="radio" id="ios" v-model="selectedOS" value="iOS" name="os">
+	  <label for="ios">iOS</label>
+	  <input type="radio" id="windows" v-model="selectedOS" value="Windows" name="os">
+	  <label for="windows">Windows</label>
+
+	  <h3 for="phoneModel">Model</h3>
+	  <select id="phoneModel" v-model="selectedPhoneModel">
+		<option v-for="phoneModel in phoneModels[selectedOS]" :value="phoneModel">{{ phoneModel }}</option>
+	  </select>
+
+	  <h3>Summary:</h3>
+	  <p>Username: {{ username }}</p>
+	  <p>Phone OS: {{ selectedOS }}</p>
+	  <p>Phone Model: {{ selectedPhoneModel }}</p>
+	</form>
+  </div>
+
+  <script>
+	const app = Vue.createApp({
+	  data() {
+		return {
+		  username: '',
+		  password: '',
+		  confirmPassword: '',
+		  selectedOS: 'Android',
+		  selectedPhoneModel: '',
+		  phoneModels: {
+			Android: [
+			  'HTC 10',
+			  'Nokia 6',
+			  'Samsung Galaxy 7',
+			  'IDD VIOS Non Windows',
+			  'IDD VIOS Non Android'
+			],
+			iOS: [
+			  'IPhone 6s',
+			  'IPhone 6s Plus',
+			  'IPhone 7'
+			],
+			Windows: [
+			  'HP Elite x3',
+			  'Microsoft Lumia 950',
+			  'Microsoft Lumia 950 XL',
+			  'IDD Windows Non Android',
+			  'IDD VIOS Non Android'
+			]
+		  }
+		};
+	  }
+	});
+
+	app.mount('#app');
+  </script>
+</body>
+</html>
