@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WAI Table Task</title>
+    <meta charset="utf-8" />
+    <meta name="language" content="english" />
+    <meta name="keywords" content="Accessibility,Lab,Tasks" />
+    <meta name="description" content="WAI Table Task" />
+</head>
+<body>
+    <h1>WAI Table Example</h1>
+    <table>
+        <caption>Team Sales from 2013-16 (in millions of $)</caption>
+        <thead>
+            <tr>
+                <th id="team-header" scope="col">Team</th>
+                <th id="year-2013-header" scope="col">2013</th>
+                <th id="year-2014-header" scope="col">2014</th>
+                <th id="year-2015-header" scope="col">2015</th>
+                <th id="year-2016-header" scope="col">2016</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="alpha-team-header" scope="row">Alpha</th>
+                <td headers="team-header year-2013-header">80</td>
+                <td headers="team-header year-2014-header">90</td>
+                <td headers="team-header year-2015-header">94</td>
+                <td headers="team-header year-2016-header">96</td>
+            </tr>
+            <tr>
+                <th id="bravo-team-header" scope="row">Bravo</th>
+                <td headers="team-header year-2013-header">55</td>
+                <td headers="team-header year-2014-header">59</td>
+                <td headers="team-header year-2015-header">55</td>
+                <td headers="team-header year-2016-header">59</td>
+            </tr>
+            <tr>
+                <th id="charlie-team-header" scope="row">Charlie</th>
+                <td headers="team-header year-2013-header">25</td>
+                <td headers="team-header year-2014-header">25</td>
+                <td headers="team-header year-2015-header">28</td>
+                <td headers="team-header year-2016-header">30</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
