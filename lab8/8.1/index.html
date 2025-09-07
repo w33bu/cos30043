@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Vue App</title>
+	<link
+	  rel="stylesheet"
+	  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	/>
+  </head>
+  <body>
+	<div id="app" class="container">
+	  <table class="table">
+		<caption>Units</caption>
+		<thead>
+		  <tr>
+			<th scope="col" id="code-header">Code</th>
+			<th scope="col" id="desc-header">Description</th>
+			<th scope="col" id="cp-header">CP</th>
+			<th scope="col" id="type-header">Type</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr v-for="unit in paginatedUnits" :key="unit.code">
+			<td headers="code-header">{{ unit.code }}</td>
+			<td headers="desc-header">{{ unit.desc }}</td>
+			<td headers="cp-header">{{ unit.cp }}</td>
+			<td headers="type-header">{{ unit.type }}</td>
+		  </tr>
+		</tbody>
+	  </table>
+	  <nav>
+		<ul class="pagination justify-content-center">
+		  <li class="page-item" :class="{ 'active': currentPage === page }" v-for="page in totalPages" :key="page">
+			<a class="page-link" href="#" @click="changePage(page)">{{ page }}</a>
+		  </li>
+		</ul>
+	  </nav>
+	</div>
+
+	<script src="https://unpkg.com/vue@next"></script>
+	<script src="app.js"></script>
+  </body>
+</html>
